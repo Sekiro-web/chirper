@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Chirp;
+use App\Policies\ChirpPolicy;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,4 +23,8 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
+
+    protected $policies = [
+        Chirp::class => ChirpPolicy::class,
+    ];
 }
